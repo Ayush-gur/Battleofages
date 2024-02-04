@@ -274,10 +274,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 098f3ab79389dc24a9beb546d4cd12c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerMovementNames: {fileID: 0}
   speed: 140
-  inputNameHorizontal: Horizontal 1
-  inputNameVertical: Vertical 1
-  inputNameJump: Jump 1
   jumpForce: 5
 --- !u!114 &61962591
 MonoBehaviour:
@@ -315,9 +313,7 @@ MonoBehaviour:
   otherPlayer:
     serializedVersion: 2
     m_Bits: 128
-  inputNameLightPunch: Lpunch 1
-  inputNameSpecialAttack: Sattack 1
-  inputNameKick: Kick 1
+  playerAttackNames: {fileID: 0}
 --- !u!1 &237729722
 GameObject:
   m_ObjectHideFlags: 0
@@ -460,7 +456,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 306475535}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Attackpoint
   m_TagString: Untagged
   m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
@@ -643,7 +639,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 393314301}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Attackpoint
   m_TagString: Untagged
   m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
@@ -1323,7 +1319,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: 0.006476682, y: -0.9916874, z: 0.11595653, w: 0.05539235}
-  m_LocalPosition: {x: 1.356634, y: 3.2667687, z: 5.790162}
+  m_LocalPosition: {x: 1.3566331, y: 3.2667687, z: 5.7901626}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1843,8 +1839,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SendPointerHoverToParent: 1
-  m_HorizontalAxis: Horizontal 1
-  m_VerticalAxis: Vertical 1
+  m_HorizontalAxis: Horizontal 3
+  m_VerticalAxis: Vertical 3
   m_SubmitButton: Submit 3
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
@@ -2168,10 +2164,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 098f3ab79389dc24a9beb546d4cd12c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerMovementNames: {fileID: 0}
   speed: 140
-  inputNameHorizontal: Horizontal 2
-  inputNameVertical: Vertical 2
-  inputNameJump: Jump 2
   jumpForce: 5
 --- !u!114 &1688293518
 MonoBehaviour:
@@ -2209,9 +2203,7 @@ MonoBehaviour:
   otherPlayer:
     serializedVersion: 2
     m_Bits: 64
-  inputNameLightPunch: Lpunch 2
-  inputNameSpecialAttack: Sattack 2
-  inputNameKick: Kick 2
+  playerAttackNames: {fileID: 0}
 --- !u!1 &1959339302
 GameObject:
   m_ObjectHideFlags: 0
@@ -2383,7 +2375,7 @@ Transform:
   m_GameObject: {fileID: 2012553114}
   serializedVersion: 2
   m_LocalRotation: {x: 0.006476682, y: -0.9916874, z: 0.11595653, w: 0.05539235}
-  m_LocalPosition: {x: 1.356634, y: 3.2667687, z: 5.790162}
+  m_LocalPosition: {x: 1.3566331, y: 3.2667687, z: 5.7901626}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

@@ -56,5 +56,6 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Fighitng Game.sln"
+    "dotnet.defaultSolution": "Fighitng Game.sln",
+    "dotnet.preferCSharpExtension": true
 }

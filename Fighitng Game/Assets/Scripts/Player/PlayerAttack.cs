@@ -11,11 +11,10 @@ public class PlayerAttack : MonoBehaviour
     private PlayerHealth playerHealth; 
 
     //used in player controls and damage
-    [SerializeField] private string inputNameLightPunch;
-    private int LightPunchDamage = 1;
-    [SerializeField] private string inputNameSpecialAttack;
-    private int SpecialAttackDamage = 3;
-    [SerializeField] private string inputNameKick;
+    public ScriptablePlayerMovement playerAttackNames; //holds all the names of character inputs
+
+    private int LeftPunchDamage = 1;
+    private int RightPunchDamage = 1;
     private int KickDamage = 2;
 
     void Start()
@@ -25,29 +24,29 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown(inputNameLightPunch))
+        if (Input.GetButtonDown(playerAttackNames.LeftPunchInputName))
         {
-            LightPunch();
+            LeftPunch();
 
         }
-        if (Input.GetButtonDown(inputNameKick))
+        if (Input.GetButtonDown(playerAttackNames.KickInputName))
         {
             Kick();
         }
-        if (Input.GetButtonDown(inputNameSpecialAttack))
+        if (Input.GetButtonDown(playerAttackNames.RightPunchInputName))
         {
-            SpecialAttack();
+            RightPunch();
         }
     }
 
-    void LightPunch()
+    void LeftPunch()
     {
         Collider[] hitOtherPlayer = Physics.OverlapSphere(attackPoint.position, attackRange, otherPlayer);
 
         foreach (Collider enemy in hitOtherPlayer)
         {
             Debug.Log("Lpunch");
-            playerHealth.TakeDamage(LightPunchDamage);
+            playerHealth.TakeDamage(LeftPunchDamage);
         }
     }
 
@@ -62,14 +61,14 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
-    void SpecialAttack()
+    void RightPunch()
     {
         Collider[] hitOtherPlayer = Physics.OverlapSphere(attackPoint.position, attackRange, otherPlayer);
 
         foreach (Collider enemy in hitOtherPlayer)
         {
-            Debug.Log("SAttack");
-            playerHealth.TakeDamage(SpecialAttackDamage);
+            Debug.Log("RPunch");
+            playerHealth.TakeDamage(RightPunchDamage);
         }
     }
 

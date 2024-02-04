@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public ScriptablePlayerMovement playerMovementNames; //holds all the names of character inputs
 
     [SerializeField] private float speed;
-    [SerializeField] private string inputNameHorizontal;
-    [SerializeField] private string inputNameVertical;
-    [SerializeField] private string inputNameJump;
 
     private Rigidbody rb;
 
@@ -25,9 +23,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        inputHorizontal = Input.GetAxisRaw(inputNameHorizontal);
-        inputVertical = Input.GetAxisRaw(inputNameVertical);
-        if (Input.GetButtonDown(inputNameJump) && isGrounded)
+        inputHorizontal = Input.GetAxisRaw(playerMovementNames.horizontalInputName);
+        inputVertical = Input.GetAxisRaw(playerMovementNames.verticalInputName);
+        if (Input.GetButtonDown(playerMovementNames.jumpInputName) && isGrounded)
         {
             Jump();
         }
