@@ -12,7 +12,6 @@ public class PlayerMovement : MonoBehaviour
 
     private float inputHorizontal;
     private float inputVertical;
-    private float inputJump;
     public float jumpForce = 10f;
     private bool isGrounded = true;
 
@@ -29,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Jump();
         }
+      
     }
 
     private void FixedUpdate()

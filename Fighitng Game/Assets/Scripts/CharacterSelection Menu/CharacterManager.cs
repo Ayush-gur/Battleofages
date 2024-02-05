@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class CharacterManager : MonoBehaviour
 {
     public CharacterDataBase characterDB;
+    public ScriptablePlayerMovement playerMovementNames;
 
     public Text nameText;
     public Image imageOfSprite; 
@@ -17,11 +18,43 @@ public class CharacterManager : MonoBehaviour
         UpdateCharacter(selectedOption);
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
+        Keycodes();
+    }
+    private void Keycodes()
+    {
+        //Player 1
         if (Input.GetKeyDown(KeyCode.A))
         {
+            if (imageOfSprite.CompareTag("Player 1"))
+            {
+                BackOption();
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            if (imageOfSprite.CompareTag("Player 2"))
+            {
+               
+                NextOption();
+            }
+        }
 
+        //Player 2
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            if (imageOfSprite.CompareTag("Player 2"))
+            {
+                BackOption();
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            if (imageOfSprite.CompareTag("Player 2"))
+            {
+                NextOption();
+            }
         }
     }
 

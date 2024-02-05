@@ -13,4 +13,8 @@ MonoBehaviour:
   m_Name: Player 1 Movement
   m_EditorClassIdentifier: 
   horizontalInputName: Horizontal 1
-  verticalInputName: Vertical !
+  verticalInputName: Vertical 1
+  jumpInputName: Jump 1
+  LeftPunchInputName: Lpunch 1
+  RightPunchInputName: Rpunch 1
+  KickInputName: Kick 1

@@ -27,7 +27,6 @@ public class PlayerAttack : MonoBehaviour
         if (Input.GetButtonDown(playerAttackNames.LeftPunchInputName))
         {
             LeftPunch();
-
         }
         if (Input.GetButtonDown(playerAttackNames.KickInputName))
         {
@@ -47,6 +46,9 @@ public class PlayerAttack : MonoBehaviour
         {
             Debug.Log("Lpunch");
             playerHealth.TakeDamage(LeftPunchDamage);
+            /*this needs to be changed
+            * it does dmg to the player instead of other player 
+            * also change kick and Rpunch */
         }
     }
 

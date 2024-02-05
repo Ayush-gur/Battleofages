@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6053a8cab5b8f846af7e9e6316506a9, type: 3}
   m_Name: Player 2 Movement
   m_EditorClassIdentifier: 
-  horizontalInputName: Horiztontal 2
+  horizontalInputName: Horizontal 2
   verticalInputName: Vertical 2
+  jumpInputName: Jump 2
+  LeftPunchInputName: Lpunch 2
+  RightPunchInputName: Rpunch 2
+  KickInputName: Kick 2
