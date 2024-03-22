@@ -40,6 +40,7 @@ public class PauseMenu : MonoBehaviour
     public void LoadMenu()
     {
         Debug.Log("Loading");
+
     }
 
     public void QuitGame()
@@ -47,4 +48,10 @@ public class PauseMenu : MonoBehaviour
         Debug.Log("Quitting");
 
     }
+
+    public void Restart()
+    {
+
+    }
+   
 }

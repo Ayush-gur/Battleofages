@@ -7,6 +7,7 @@ public class PlayerAttack : MonoBehaviour
     public Transform attackPoint;
     public float attackRange = 0.5f;
     public LayerMask otherPlayer;
+    Collider[] hitOtherPlayer;
 
     private PlayerHealth playerHealth; 
 
@@ -24,6 +25,7 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        hitOtherPlayer = Physics.OverlapSphere(attackPoint.position, attackRange, otherPlayer);
         if (Input.GetButtonDown(playerAttackNames.LeftPunchInputName))
         {
             LeftPunch();
@@ -40,37 +42,36 @@ public class PlayerAttack : MonoBehaviour
 
     void LeftPunch()
     {
-        Collider[] hitOtherPlayer = Physics.OverlapSphere(attackPoint.position, attackRange, otherPlayer);
-
         foreach (Collider enemy in hitOtherPlayer)
         {
+            PlayerHealth otherPlayerHealth = enemy.GetComponent<PlayerHealth>();
+
             Debug.Log("Lpunch");
-            playerHealth.TakeDamage(LeftPunchDamage);
-            /*this needs to be changed
-            * it does dmg to the player instead of other player 
-            * also change kick and Rpunch */
+            otherPlayerHealth.TakeDamage(LeftPunchDamage);
         }
     }
 
     void Kick()
     {
-        Collider[] hitOtherPlayer = Physics.OverlapSphere(attackPoint.position, attackRange, otherPlayer);
-
+        
         foreach (Collider enemy in hitOtherPlayer)
         {
+            PlayerHealth otherPlayerHealth = enemy.GetComponent<PlayerHealth>();
+
             Debug.Log("Kicked");
-            playerHealth.TakeDamage(KickDamage);
+            otherPlayerHealth.TakeDamage(KickDamage);
         }
     }
 
     void RightPunch()
     {
-        Collider[] hitOtherPlayer = Physics.OverlapSphere(attackPoint.position, attackRange, otherPlayer);
+       
 
         foreach (Collider enemy in hitOtherPlayer)
         {
+            PlayerHealth otherPlayerHealth = enemy.GetComponent<PlayerHealth>();
             Debug.Log("RPunch");
-            playerHealth.TakeDamage(RightPunchDamage);
+            otherPlayerHealth.TakeDamage(RightPunchDamage);
         }
     }
 

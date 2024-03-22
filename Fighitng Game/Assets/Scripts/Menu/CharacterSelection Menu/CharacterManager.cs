@@ -6,10 +6,12 @@ using UnityEngine.UI;
 public class CharacterManager : MonoBehaviour
 {
     public CharacterDataBase characterDB;
-    public ScriptablePlayerMovement playerMovementNames;
 
     public Text nameText;
-    public Image imageOfSprite; 
+    public Image imageOfSprite;
+
+    public int selectedPlayer1; //this is for when player presses enter and goes to the game
+    public int selectedPlayer2;
 
     private int selectedOption = 0;
     // Start is called before the first frame update
@@ -34,7 +36,7 @@ public class CharacterManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
-            if (imageOfSprite.CompareTag("Player 2"))
+            if (imageOfSprite.CompareTag("Player 1"))
             {
                
                 NextOption();
