@@ -34,15 +34,6 @@ public class PlayerHealth : MonoBehaviour
             Die();
         }
     }
-    public void DoDamage(int damageAmount)
-    {
-        currentHealth -= damageAmount;
-        UpdateHealthUI();
-        if (currentHealth <= 0)
-        {
-            Die();
-        }
-    }
 
     private void Die()
     {

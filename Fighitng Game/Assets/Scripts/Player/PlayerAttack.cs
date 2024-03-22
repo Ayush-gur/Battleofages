@@ -9,8 +9,6 @@ public class PlayerAttack : MonoBehaviour
     public LayerMask otherPlayer;
     Collider[] hitOtherPlayer;
 
-    private PlayerHealth playerHealth; 
-
     //used in player controls and damage
     public ScriptablePlayerMovement playerAttackNames; //holds all the names of character inputs
 
@@ -18,9 +16,12 @@ public class PlayerAttack : MonoBehaviour
     private int RightPunchDamage = 1;
     private int KickDamage = 2;
 
+    //Sound Manager
+    private SoundManager sm;
+
     void Start()
     {
-        playerHealth = GetComponent<PlayerHealth>();
+        sm = GameObject.FindObjectOfType<SoundManager>();
     }
     // Update is called once per frame
     void Update()
@@ -29,14 +30,17 @@ public class PlayerAttack : MonoBehaviour
         if (Input.GetButtonDown(playerAttackNames.LeftPunchInputName))
         {
             LeftPunch();
+            sm.AttackSFX();
         }
         if (Input.GetButtonDown(playerAttackNames.KickInputName))
         {
             Kick();
+            sm.KickSFX();
         }
         if (Input.GetButtonDown(playerAttackNames.RightPunchInputName))
         {
             RightPunch();
+            sm.AttackSFX();
         }
     }
 
@@ -65,8 +69,6 @@ public class PlayerAttack : MonoBehaviour
 
     void RightPunch()
     {
-       
-
         foreach (Collider enemy in hitOtherPlayer)
         {
             PlayerHealth otherPlayerHealth = enemy.GetComponent<PlayerHealth>();

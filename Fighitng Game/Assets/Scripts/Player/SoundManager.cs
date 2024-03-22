@@ -4,15 +4,34 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public AudioSource sfxSource;
+    public AudioClip jumpSFX, attackSFX, kickSFX;
+
+    private void Start()
     {
-        
+        sfxSource = GetComponent<AudioSource>();
+
+        if (sfxSource == null)
+        {
+            Debug.LogError("AudioSource component not found!");
+        }
+    }
+    public void KickSFX()
+    {
+        sfxSource.clip = kickSFX;
+        sfxSource.Play();
+    }
+    public void JumpSFX()
+    {
+        sfxSource.clip = jumpSFX;
+        sfxSource.Play();
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public void AttackSFX()
     {
-        
+        sfxSource.clip = attackSFX;
+        sfxSource.Play();
+
     }
 }

@@ -9,15 +9,18 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float speed;
 
     private Rigidbody rb;
+    public SoundManager sm;
 
     private float inputHorizontal;
     private float inputVertical;
     public float jumpForce = 10f;
-    private bool isGrounded = true;
+    //temp public 
+    public  bool isGrounded = true;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        sm = GameObject.FindObjectOfType<SoundManager>();
     }
 
     private void Update()
@@ -27,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown(playerMovementNames.jumpInputName) && isGrounded)
         {
             Jump();
+           
         }
       
     }
@@ -38,7 +42,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
-
         rb.AddForce(Vector2.up * jumpForce, ForceMode.Impulse);
         isGrounded = false;
     }
