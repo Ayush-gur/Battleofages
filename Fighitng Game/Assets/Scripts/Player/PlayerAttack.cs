@@ -19,9 +19,11 @@ public class PlayerAttack : MonoBehaviour
     //Sound Manager
     private SoundManager sm;
 
+    private AnimationStateController Animate;
     void Start()
     {
         sm = GameObject.FindObjectOfType<SoundManager>();
+        Animate = GetComponent<AnimationStateController>();
     }
     // Update is called once per frame
     void Update()
@@ -31,16 +33,24 @@ public class PlayerAttack : MonoBehaviour
         {
             LeftPunch();
             sm.AttackSFX();
+
+            Animate.LeftPunch();
+            //Viking and gladiator needs a sperate file that this calls, depending on the character
+
         }
         if (Input.GetButtonDown(playerAttackNames.KickInputName))
         {
             Kick();
             sm.KickSFX();
+
+            Animate.Kick();
         }
         if (Input.GetButtonDown(playerAttackNames.RightPunchInputName))
         {
             RightPunch();
             sm.AttackSFX();
+
+            Animate.RightPunch();
         }
     }
 
