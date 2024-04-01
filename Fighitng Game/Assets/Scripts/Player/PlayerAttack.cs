@@ -16,6 +16,9 @@ public class PlayerAttack : MonoBehaviour
     private int RightPunchDamage = 1;
     private int KickDamage = 2;
 
+    // private Viking viking;
+    // private Gladiator gladiator;
+
     //Sound Manager
     private SoundManager sm;
 
@@ -24,6 +27,8 @@ public class PlayerAttack : MonoBehaviour
     {
         sm = GameObject.FindObjectOfType<SoundManager>();
         Animate = GetComponent<AnimationStateController>();
+        
+        //if viking/Gladiator script exits on the charcter, get component
     }
     // Update is called once per frame
     void Update()
@@ -36,7 +41,8 @@ public class PlayerAttack : MonoBehaviour
 
             Animate.LeftPunch();
             //Viking and gladiator needs a sperate file that this calls, depending on the character
-
+            //this is becasue each character has different attack frames
+            //if(viking !=  null)
         }
         if (Input.GetButtonDown(playerAttackNames.KickInputName))
         {
@@ -73,6 +79,8 @@ public class PlayerAttack : MonoBehaviour
             PlayerHealth otherPlayerHealth = enemy.GetComponent<PlayerHealth>();
 
             Debug.Log("Kicked");
+            
+            //if the player is retracting his attack, play this
             otherPlayerHealth.TakeDamage(KickDamage);
         }
     }
