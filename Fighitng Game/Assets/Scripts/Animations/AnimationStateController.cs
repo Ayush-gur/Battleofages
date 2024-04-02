@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AnimationStateController : MonoBehaviour
 {
+    //Manages all animations here
+
     public Animator animator;
     // Start is called before the first frame update
     void Start()
@@ -42,6 +44,25 @@ public class AnimationStateController : MonoBehaviour
     public void Kick()
     {
         animator.SetInteger("isAttacking", 3);
+    }
+
+    public void Block()
+    {
+        animator.SetInteger("isAttacking", 4);
+    }
+
+    public void Combo1()
+    {
+        animator.SetInteger("isCombo", 1);
+    }
+
+    public void Combo2()
+    {
+        animator.SetInteger("isCombo", 2);
+    }
+    public void Combo3()
+    {
+        animator.SetInteger("isCombo", 3);
     }
 
 }

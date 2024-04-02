@@ -7,7 +7,7 @@ public class PlayerAttack : MonoBehaviour
     public Transform attackPoint;
     public float attackRange = 0.5f;
     public LayerMask otherPlayer;
-    Collider[] hitOtherPlayer;
+    public Collider[] hitOtherPlayer;
 
     //used in player controls and damage
     public ScriptablePlayerMovement playerAttackNames; //holds all the names of character inputs
@@ -15,18 +15,15 @@ public class PlayerAttack : MonoBehaviour
     private int LeftPunchDamage = 1;
     private int RightPunchDamage = 1;
     private int KickDamage = 2;
+    public bool canblock;
 
     // private Viking viking;
     // private Gladiator gladiator;
 
-    //Sound Manager
-    private SoundManager sm;
-
-    private AnimationStateController Animate;
     void Start()
     {
-        sm = GameObject.FindObjectOfType<SoundManager>();
-        Animate = GetComponent<AnimationStateController>();
+       
+      
         
         //if viking/Gladiator script exits on the charcter, get component
     }
@@ -34,66 +31,8 @@ public class PlayerAttack : MonoBehaviour
     void Update()
     {
         hitOtherPlayer = Physics.OverlapSphere(attackPoint.position, attackRange, otherPlayer);
-        if (Input.GetButtonDown(playerAttackNames.LeftPunchInputName))
-        {
-            LeftPunch();
-            sm.AttackSFX();
-
-            Animate.LeftPunch();
-            //Viking and gladiator needs a sperate file that this calls, depending on the character
-            //this is becasue each character has different attack frames
-            //if(viking !=  null)
-        }
-        if (Input.GetButtonDown(playerAttackNames.KickInputName))
-        {
-            Kick();
-            sm.KickSFX();
-
-            Animate.Kick();
-        }
-        if (Input.GetButtonDown(playerAttackNames.RightPunchInputName))
-        {
-            RightPunch();
-            sm.AttackSFX();
-
-            Animate.RightPunch();
-        }
     }
 
-    void LeftPunch()
-    {
-        foreach (Collider enemy in hitOtherPlayer)
-        {
-            PlayerHealth otherPlayerHealth = enemy.GetComponent<PlayerHealth>();
-
-            Debug.Log("Lpunch");
-            otherPlayerHealth.TakeDamage(LeftPunchDamage);
-        }
-    }
-
-    void Kick()
-    {
-        
-        foreach (Collider enemy in hitOtherPlayer)
-        {
-            PlayerHealth otherPlayerHealth = enemy.GetComponent<PlayerHealth>();
-
-            Debug.Log("Kicked");
-            
-            //if the player is retracting his attack, play this
-            otherPlayerHealth.TakeDamage(KickDamage);
-        }
-    }
-
-    void RightPunch()
-    {
-        foreach (Collider enemy in hitOtherPlayer)
-        {
-            PlayerHealth otherPlayerHealth = enemy.GetComponent<PlayerHealth>();
-            Debug.Log("RPunch");
-            otherPlayerHealth.TakeDamage(RightPunchDamage);
-        }
-    }
 
 
     private void OnDrawGizmosSelected()
