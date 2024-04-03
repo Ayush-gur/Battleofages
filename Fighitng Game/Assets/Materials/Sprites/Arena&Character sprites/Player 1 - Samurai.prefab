@@ -155,7 +155,7 @@ MonoBehaviour:
   attackRange: 0.5
   otherPlayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 0
   playerAttackNames: {fileID: 11400000, guid: 90e334700ce30474991216e112e705ef, type: 2}
 --- !u!114 &2715499241761456394
 MonoBehaviour:
@@ -173,7 +173,7 @@ MonoBehaviour:
   currentHealth: 0
   otherPlayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 0
   healthText: {fileID: 0}
   WhichPlayerText: Player 1
 --- !u!114 &4453791529989951991
