@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public ScriptablePlayerMovement playerMovementNames; //holds all the names of character inputs
+    private AnimationStateController Animation;
+    public Transform opponent;
 
     [SerializeField] private float speed;
 
@@ -14,32 +16,88 @@ public class PlayerMovement : MonoBehaviour
     private float inputHorizontal;
     private float inputVertical;
     public float jumpForce = 10f;
-    //temp public 
-    public  bool isGrounded = true;
+
+    private  bool isGrounded = true;
+    public bool isMoving = false;
+    public bool isAttacking = false;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         sm = GameObject.FindObjectOfType<SoundManager>();
+        Animation = GetComponent<AnimationStateController>();
+        if (gameObject.tag == "Player1")
+        {
+            opponent = GameObject.FindGameObjectWithTag("Player2").transform;
+        }
+        else if (gameObject.tag == "Player2")
+        {
+            opponent = GameObject.FindGameObjectWithTag("Player1").transform;
+        }
     }
 
     private void Update()
     {
         inputHorizontal = Input.GetAxisRaw(playerMovementNames.horizontalInputName);
         inputVertical = Input.GetAxisRaw(playerMovementNames.verticalInputName);
-        if (Input.GetButtonDown(playerMovementNames.jumpInputName) && isGrounded)
+
+        if (inputHorizontal != 0 || inputVertical != 0)
         {
-            Jump();
-           
+            isMoving = true;
+
+            if (inputHorizontal > 0)
+            {
+                Debug.Log("Moving forwards");
+                Animation.WalkingForward();
+            }
+            else if (inputHorizontal < 0)
+            {
+                Debug.Log("Moving backwards");
+                Animation.WalkingBackward();
+            }
+          
         }
-      
+        else
+        {
+            Animation.StopWalking();
+            isMoving = false;
+        }
+        Vector3 directionToOpponent = opponent.position - transform.position;
+        directionToOpponent.y = 0;
+        Quaternion lookRotation = Quaternion.LookRotation(directionToOpponent);
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 10);
     }
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector3(inputHorizontal * speed * Time.fixedDeltaTime, rb.velocity.y, inputVertical * speed * Time.fixedDeltaTime);
-    }
+        if (!isAttacking) 
+        {
+            isMoving = true;
+            rb.velocity = new Vector3(inputHorizontal * speed * Time.fixedDeltaTime, rb.velocity.y, inputVertical * speed * Time.fixedDeltaTime);
 
+        }
+    }
+    private void MovingHorizontal()
+    {
+        isMoving = true;
+       
+        if (inputHorizontal > 0)
+        {
+            Debug.Log("Moving forwards");
+            Animation.WalkingForward();
+        }
+        else if (inputHorizontal < 0)
+        {
+            Debug.Log("Moving backwards");
+            Animation.WalkingBackward();
+        }
+        
+    }
+    private void MovingVertical()
+    {
+        isMoving = true;
+        
+    }
     private void Jump()
     {
         rb.AddForce(Vector2.up * jumpForce, ForceMode.Impulse);

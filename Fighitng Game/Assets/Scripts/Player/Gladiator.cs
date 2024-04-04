@@ -50,12 +50,7 @@ public class Gladiator : MonoBehaviour
         comboAvailable[2] = false;
 
         comboTimerCoroutine = StartCoroutine(ComboTimer());
-        foreach (Collider enemy in playerAttack.hitOtherPlayer)
-        {
-            PlayerHealth otherPlayerHealth = enemy.GetComponent<PlayerHealth>();
-            Debug.Log("Lpunch");
-            
-        }
+        
 
        
     }
@@ -66,12 +61,7 @@ public class Gladiator : MonoBehaviour
         comboAvailable[1] = true;
         comboAvailable[2] = false;
 
-        foreach (Collider enemy in playerAttack.hitOtherPlayer)
-        {
-            PlayerHealth otherPlayerHealth = enemy.GetComponent<PlayerHealth>();
-            Debug.Log("RPunch");
-            //otherPlayerHealth.TakeDamage(RightPunchDamage);
-        }
+        
     }
 
     void GladiatorKick()
@@ -81,15 +71,7 @@ public class Gladiator : MonoBehaviour
         comboAvailable[1] = true;
         comboAvailable[2] = false;
 
-        foreach (Collider enemy in playerAttack.hitOtherPlayer)
-        {
-            PlayerHealth otherPlayerHealth = enemy.GetComponent<PlayerHealth>();
-
-            Debug.Log("Kicked");
-
-            //if the player is retracting his attack, play this
-            //otherPlayerHealth.TakeDamage(KickDamage);
-        }
+      
     }
 
     IEnumerator ComboTimer()
@@ -125,5 +107,10 @@ public class Gladiator : MonoBehaviour
 
             yield return null;
         }
+        Animate.animator.SetInteger("isCombo", 0);
+        Animate.animator.SetInteger("isAttacking", 0);
+        Animate.animator.SetInteger("isMoving", 0);
+
+
     }
 }

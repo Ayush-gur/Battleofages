@@ -15,6 +15,7 @@ MonoBehaviour:
   horizontalInputName: Horizontal 2
   verticalInputName: Vertical 2
   jumpInputName: Jump 2
+  BlockInputName: Block 2
   LeftPunchInputName: Lpunch 2
   RightPunchInputName: Rpunch 2
   KickInputName: Kick 2

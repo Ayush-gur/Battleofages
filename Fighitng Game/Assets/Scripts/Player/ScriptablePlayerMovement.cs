@@ -9,6 +9,7 @@ public class ScriptablePlayerMovement : ScriptableObject
     public string horizontalInputName;
     public string verticalInputName;
     public string jumpInputName;
+    public string BlockInputName;
 
     //attacks
     public string LeftPunchInputName;
