@@ -8,7 +8,7 @@ public class PlayerAttack : MonoBehaviour
     public Transform attackPointKick;
     private float attackRange = 0.5f;
     private LayerMask otherPlayer;
-    private Collider[] hitOtherPlayer;
+    public Collider[] hitOtherPlayer;
     private Collider[] hitOtherPlayerKick;
 
 

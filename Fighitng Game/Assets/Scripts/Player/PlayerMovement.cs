@@ -62,6 +62,7 @@ public class PlayerMovement : MonoBehaviour
             Animation.StopWalking();
             isMoving = false;
         }
+
         Vector3 directionToOpponent = opponent.position - transform.position;
         directionToOpponent.y = 0;
         Quaternion lookRotation = Quaternion.LookRotation(directionToOpponent);
