@@ -147,6 +147,8 @@ public class PlayerAttack : MonoBehaviour
             }
 
         }
+
+        attackTimerCoroutine = StartCoroutine(attackAnimationTimer());
     }
 
     void Kick()
@@ -183,6 +185,7 @@ public class PlayerAttack : MonoBehaviour
                 Debug.Log("Blocked");
             }
         }
+        attackTimerCoroutine = StartCoroutine(attackAnimationTimer());
     }
 
 
@@ -198,5 +201,6 @@ public class PlayerAttack : MonoBehaviour
     {
         yield return new WaitForSeconds(attackTime);
         Animate.animator.SetInteger("isAttacking", 0);
+        playerMovement.isAttacking = false;
     }
 }
