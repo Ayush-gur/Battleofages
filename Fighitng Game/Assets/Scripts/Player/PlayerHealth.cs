@@ -11,6 +11,7 @@ public class PlayerHealth : MonoBehaviour
     public Text healthText;
     public string WhichPlayerText;
 
+   
     public GameObject endMenuUI;
     public GameObject endMenuUI2;
     // Start is called before the first frame update
@@ -39,20 +40,22 @@ public class PlayerHealth : MonoBehaviour
     private void Die()
     {
         Debug.Log(WhichPlayerText + " Died");
-        if (gameObject.tag == "Player1")
+        if (gameObject.tag == "Player 1")
         {
            
-            if (endMenuUI != null)
-            {
-                endMenuUI.SetActive(true);
-            }
-        }
-        else if (gameObject.tag == "Player2")
-        {
-           
-            if (endMenuUI2 != null)
+            if (!endMenuUI2.activeSelf)
             {
                 endMenuUI2.SetActive(true);
+                Time.timeScale = 0;
+            }
+        }
+        else if (gameObject.tag == "Player 2")
+        {
+           
+            if (!endMenuUI.activeSelf)
+            {
+                endMenuUI.SetActive(true);
+                Time.timeScale = 0;
             }
         }
     }
