@@ -20,9 +20,9 @@ public class PlayerAttack : MonoBehaviour
     //this is done to check the bool isMoving, that was attack animation can be prioritized over movement
     private PlayerMovement playerMovement;
 
-    private int LeftPunchDamage = 1;
-    private int RightPunchDamage = 1;
-    private int KickDamage = 2;
+    private int LeftPunchDamage = 3;
+    private int RightPunchDamage = 3;
+    private int KickDamage = 5;
     public bool isBlocking = false;
     public float BlockTimer = 0f;
     private Coroutine attackTimerCoroutine;
@@ -56,19 +56,23 @@ public class PlayerAttack : MonoBehaviour
 
         if (Input.GetButtonDown(playerAttackNames.LeftPunchInputName))
         {
+            playerMovement.isAttacking = true;
             LeftPunch();
 
         }
         if (Input.GetButtonDown(playerAttackNames.KickInputName))
         {
+            playerMovement.isAttacking = true;
             Kick();
         }
         if (Input.GetButtonDown(playerAttackNames.RightPunchInputName))
         {
+            playerMovement.isAttacking = true;
             RightPunch();
         }
         if (Input.GetButtonDown(playerAttackNames.BlockInputName))
         {
+            playerMovement.isAttacking = true;
             Block();
         }
         else
@@ -85,6 +89,7 @@ public class PlayerAttack : MonoBehaviour
     {
         playerMovement.isMoving = false;
         playerMovement.isAttacking = true;
+        Animate.StopWalking();
         Animate.LeftPunch();
 
         if(Viking != null)
@@ -117,10 +122,9 @@ public class PlayerAttack : MonoBehaviour
     }
     public void RightPunch()
     {
-        if (playerMovement.isMoving == true)
-        {
-            Animate.StopWalking();
-        }
+        playerMovement.isMoving = false;
+        playerMovement.isAttacking = true;
+        Animate.StopWalking();
         Animate.RightPunch();
         if (Viking != null)
         {
@@ -153,11 +157,9 @@ public class PlayerAttack : MonoBehaviour
 
     void Kick()
     {
-        if (playerMovement.isMoving == true)
-        {
-            Animate.StopWalking();
-        }
-
+        playerMovement.isMoving = false;
+        playerMovement.isAttacking = true;
+        Animate.StopWalking();
         Animate.Kick();
         if (Viking != null)
         {

@@ -7,11 +7,12 @@ public class PlayerHealth : MonoBehaviour
 {
     public int MaxHealth;
     public int currentHealth;
-    public LayerMask otherPlayer;
 
     public Text healthText;
     public string WhichPlayerText;
 
+    public GameObject endMenuUI;
+    public GameObject endMenuUI2;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +39,22 @@ public class PlayerHealth : MonoBehaviour
     private void Die()
     {
         Debug.Log(WhichPlayerText + " Died");
+        if (gameObject.tag == "Player1")
+        {
+           
+            if (endMenuUI != null)
+            {
+                endMenuUI.SetActive(true);
+            }
+        }
+        else if (gameObject.tag == "Player2")
+        {
+           
+            if (endMenuUI2 != null)
+            {
+                endMenuUI2.SetActive(true);
+            }
+        }
     }
 
     void UpdateHealthUI()

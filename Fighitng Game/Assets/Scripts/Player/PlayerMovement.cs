@@ -40,8 +40,11 @@ public class PlayerMovement : MonoBehaviour
     {
         inputHorizontal = Input.GetAxisRaw(playerMovementNames.horizontalInputName);
         inputVertical = Input.GetAxisRaw(playerMovementNames.verticalInputName);
-
-        if (inputHorizontal != 0 || inputVertical != 0)
+        if (Input.GetButtonDown(playerMovementNames.jumpInputName))
+        {
+            Jump();
+        }
+            if (inputHorizontal != 0 || inputVertical != 0)
         {
             isMoving = true;
 
