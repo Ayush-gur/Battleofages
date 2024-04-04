@@ -673,6 +673,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackPoint: {fileID: 1927474869}
   attackPointKick: {fileID: 253830642}
+  otherPlayer:
+    serializedVersion: 2
+    m_Bits: 64
+  hitOtherPlayer: []
   playerAttackNames: {fileID: 11400000, guid: 90e334700ce30474991216e112e705ef, type: 2}
   isBlocking: 0
   BlockTimer: 0
@@ -837,7 +841,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 298686457}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.09380245, y: 0.000000007803409, z: -7.3522133e-10, w: 0.99559087}
+  m_LocalRotation: {x: 0.093802415, y: -0.000000052507207, z: 0.000000004947115, w: 0.99559087}
   m_LocalPosition: {x: 2.145, y: 0.7850001, z: -4.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1394,6 +1398,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackPoint: {fileID: 925091624}
   attackPointKick: {fileID: 1116367835}
+  otherPlayer:
+    serializedVersion: 2
+    m_Bits: 128
+  hitOtherPlayer: []
   playerAttackNames: {fileID: 11400000, guid: 50890e7e68dc3db4abe8744830f7c78f, type: 2}
   isBlocking: 0
   BlockTimer: 0
@@ -1472,8 +1480,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d637de3bb6ce80b4bbc1ad617b7a3346, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerAttackNames: {fileID: 0}
-  TimeForCombo: 0
 --- !u!1 &631379777
 GameObject:
   m_ObjectHideFlags: 0
@@ -2417,7 +2423,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.09380245, y: 0.000000007803409, z: -7.3522133e-10, w: 0.99559087}
+  m_LocalRotation: {x: 0.093802415, y: -0.000000052507207, z: 0.000000004947115, w: 0.99559087}
   m_LocalPosition: {x: 2.78, y: 2.67, z: -4.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

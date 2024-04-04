@@ -7,7 +7,7 @@ public class PlayerAttack : MonoBehaviour
     public Transform attackPoint;
     public Transform attackPointKick;
     private float attackRange = 0.5f;
-    private LayerMask otherPlayer;
+    public LayerMask otherPlayer;
     public Collider[] hitOtherPlayer;
     private Collider[] hitOtherPlayerKick;
 
@@ -42,14 +42,7 @@ public class PlayerAttack : MonoBehaviour
         monk = GetComponent<Monk>();
         gladiator = GetComponent<Gladiator>();
         Viking = GetComponent<Viking>();
-        if (gameObject.tag == "Player 1")
-        {
-            //add the changes for character here
-        }
-        else if (gameObject.tag == "Player 2")
-        {
-
-        }
+       
     }
     // Update is called once per frame
     void Update()
