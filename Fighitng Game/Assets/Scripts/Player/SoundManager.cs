@@ -7,9 +7,8 @@ public class SoundManager : MonoBehaviour
     public AudioSource sfxSource;
     public AudioClip jumpSFX, attackSFX, kickSFX;
 
-    private void Start()
+    private void Awake()
     {
-        sfxSource = GetComponent<AudioSource>();
 
         if (sfxSource == null)
         {
