@@ -1,5 +1,22 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
+<<<<<<<< Updated upstream:Fighitng Game/Assets/Animations/Gladiator/g-1_g-1.anim.meta
 guid: c24763be0817eb34d81b42225aedf1ad
+========
+guid: ab80b12e68790d142ab92596a5831ac4
+>>>>>>>> Stashed changes:Fighitng Game/Assets/Animations/Gladiator/g-1_g-1_g-1_g-block (main).anim.meta
+=======
+<<<<<<< HEAD
+<<<<<<<< HEAD:Fighitng Game/Assets/Animations/Gladiator/g-1_g-1_g-1_g-1.anim.meta
+guid: 8aee31e34bb793b4fbbefe8901f198aa
+=======
+<<<<<<<< HEAD:Fighitng Game/Assets/Animations/Gladiator/g-1_g-1_g-1_g-2.anim.meta
+guid: 418a9d1e4cd80b0499f9e8d7f3b53d73
+>>>>>>> e3b81c319c09d852fa208b7bcc96965c02f06aa1
+========
+guid: c24763be0817eb34d81b42225aedf1ad
+>>>>>>>> e3b81c319c09d852fa208b7bcc96965c02f06aa1:Fighitng Game/Assets/Animations/Gladiator/g-1_g-1.anim.meta
+>>>>>>> Stashed changes
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 7400000

@@ -1,5 +1,21 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
 guid: 307789ae7a1bfb04f9f9fabb8dc637ea
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<<< HEAD:Fighitng Game/Assets/Animations/Viking/viking ideal_viking ideal_viking ideal_Left side.anim.meta
+guid: 1193bb3755d1f3b43ac2a42c020741e7
+========
+guid: 307789ae7a1bfb04f9f9fabb8dc637ea
+>>>>>>>> e3b81c319c09d852fa208b7bcc96965c02f06aa1:Fighitng Game/Assets/Animations/Viking/viking ideal_Left side.anim.meta
+=======
+guid: 307789ae7a1bfb04f9f9fabb8dc637ea
+>>>>>>> e3b81c319c09d852fa208b7bcc96965c02f06aa1
+=======
+guid: 307789ae7a1bfb04f9f9fabb8dc637ea
+>>>>>>> e3b81c319c09d852fa208b7bcc96965c02f06aa1
+>>>>>>> Stashed changes
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 7400000
