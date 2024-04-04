@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public ScriptablePlayerMovement playerMovementNames; //holds all the names of character inputs
     private AnimationStateController Animation;
-    public Transform opponent;
+    private Transform opponent;
 
     [SerializeField] private float speed;
 
@@ -26,13 +26,13 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         sm = GameObject.FindObjectOfType<SoundManager>();
         Animation = GetComponent<AnimationStateController>();
-        if (gameObject.tag == "Player1")
+        if (gameObject.tag == "Player 1")
         {
-            opponent = GameObject.FindGameObjectWithTag("Player2").transform;
+            opponent = GameObject.FindGameObjectWithTag("Player 2").transform;
         }
-        else if (gameObject.tag == "Player2")
+        else if (gameObject.tag == "Player 2")
         {
-            opponent = GameObject.FindGameObjectWithTag("Player1").transform;
+            opponent = GameObject.FindGameObjectWithTag("Player 1").transform;
         }
     }
 
