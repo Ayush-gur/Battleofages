@@ -217,33 +217,6 @@ AnimatorStateMachine:
     m_Position: {x: 440, y: 30, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7716356001591450528}
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-    m_Position: {x: 830, y: 20, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 4791564697704893344}
-    m_Position: {x: 620, y: 110, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: -121169645907558748}
-    m_Position: {x: 620, y: -70, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 5005368914402860119}
-    m_Position: {x: 200, y: 120, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 1987534715956119672}
-    m_Position: {x: 170, y: 20, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 1395963248443225868}
-    m_Position: {x: 200, y: -80, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: -4123954608911421873}
-    m_Position: {x: 440, y: 220, z: 0}
-=======
-=======
->>>>>>> e3b81c319c09d852fa208b7bcc96965c02f06aa1
->>>>>>> Stashed changes
     m_Position: {x: 810, y: 20, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4791564697704893344}
@@ -263,39 +236,14 @@ AnimatorStateMachine:
   - serializedVersion: 1
     m_State: {fileID: -4123954608911421873}
     m_Position: {x: 370, y: 220, z: 0}
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
->>>>>>> e3b81c319c09d852fa208b7bcc96965c02f06aa1
-=======
->>>>>>> e3b81c319c09d852fa208b7bcc96965c02f06aa1
->>>>>>> Stashed changes
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-<<<<<<< Updated upstream
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
   m_EntryPosition: {x: 450, y: -200, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-  m_AnyStatePosition: {x: -30, y: 30, z: 0}
-  m_EntryPosition: {x: 450, y: -200, z: 0}
-  m_ExitPosition: {x: 850, y: 140, z: 0}
-=======
-  m_AnyStatePosition: {x: 50, y: 20, z: 0}
-  m_EntryPosition: {x: 450, y: -200, z: 0}
-  m_ExitPosition: {x: 800, y: 120, z: 0}
->>>>>>> e3b81c319c09d852fa208b7bcc96965c02f06aa1
-=======
-  m_AnyStatePosition: {x: 50, y: 20, z: 0}
-  m_EntryPosition: {x: 450, y: -200, z: 0}
-  m_ExitPosition: {x: 800, y: 120, z: 0}
->>>>>>> e3b81c319c09d852fa208b7bcc96965c02f06aa1
->>>>>>> Stashed changes
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 8380793935798034678}
 --- !u!1102 &-121169645907558748
@@ -339,37 +287,13 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-<<<<<<< Updated upstream
     m_Controller: {fileID: 0}
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-    m_Controller: {fileID: 9100000}
-=======
-    m_Controller: {fileID: 0}
->>>>>>> e3b81c319c09d852fa208b7bcc96965c02f06aa1
-=======
-    m_Controller: {fileID: 0}
->>>>>>> e3b81c319c09d852fa208b7bcc96965c02f06aa1
->>>>>>> Stashed changes
   - m_Name: isAttacking
     m_Type: 3
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-<<<<<<< Updated upstream
     m_Controller: {fileID: 0}
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-    m_Controller: {fileID: 9100000}
-=======
-    m_Controller: {fileID: 0}
->>>>>>> e3b81c319c09d852fa208b7bcc96965c02f06aa1
-=======
-    m_Controller: {fileID: 0}
->>>>>>> e3b81c319c09d852fa208b7bcc96965c02f06aa1
->>>>>>> Stashed changes
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
