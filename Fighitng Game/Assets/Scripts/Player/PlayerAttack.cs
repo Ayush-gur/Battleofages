@@ -49,11 +49,6 @@ public class PlayerAttack : MonoBehaviour
     {
         hitOtherPlayer = Physics.OverlapSphere(attackPoint.position, attackRange, otherPlayer);
         hitOtherPlayerKick = Physics.OverlapSphere(attackPoint.position, attackRange, otherPlayer);
-
-    }
-    private void FixedUpdate()
-    {
-
         if (Input.GetButtonDown(playerAttackNames.LeftPunchInputName))
         {
             playerMovement.isAttacking = true;
@@ -70,15 +65,18 @@ public class PlayerAttack : MonoBehaviour
             playerMovement.isAttacking = true;
             RightPunch();
         }
-        if (Input.GetButtonDown(playerAttackNames.BlockInputName))
-        {
-            playerMovement.isAttacking = true;
-            Block();
-        }
-        else
-        {
-            isBlocking = false;
-        }
+        /* if (Input.GetButtonDown(playerAttackNames.BlockInputName))
+         {
+             playerMovement.isAttacking = true;
+             Block();
+         }*/
+        
+
+    }
+    private void FixedUpdate()
+    {
+
+        
     }
     public void Block()
     {

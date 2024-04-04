@@ -42,7 +42,6 @@ public class PlayerHealth : MonoBehaviour
         Debug.Log(WhichPlayerText + " Died");
         if (gameObject.tag == "Player 1")
         {
-           
             if (!endMenuUI2.activeSelf)
             {
                 endMenuUI2.SetActive(true);

@@ -104,8 +104,11 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Jump()
     {
-        rb.AddForce(Vector2.up * jumpForce, ForceMode.Impulse);
-        isGrounded = false;
+        if (isGrounded)
+        {
+            rb.AddForce(Vector2.up * jumpForce, ForceMode.Impulse);
+            isGrounded = false;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
