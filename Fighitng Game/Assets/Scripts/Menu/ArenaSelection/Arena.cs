@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Arena : MonoBehaviour
 {
+    public AudioSource Hover;
     // Start is called before the first frame update
     void Start()
     {

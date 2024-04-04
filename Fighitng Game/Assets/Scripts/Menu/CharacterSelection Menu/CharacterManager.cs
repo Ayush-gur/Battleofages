@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class CharacterManager : MonoBehaviour
 {
     public CharacterDataBase characterDB;
+    public AudioSource menuHover;
 
     public Text nameText;
     public Image imageOfSprite;
@@ -17,6 +18,10 @@ public class CharacterManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (menuHover == null)
+        {
+            menuHover = GameObject.Find("MenuHover").GetComponent<AudioSource>();
+        }
         UpdateCharacter(selectedOption);
     }
 
@@ -68,6 +73,7 @@ public class CharacterManager : MonoBehaviour
         {
             selectedOption = 0;
         }
+        menuHover.Play();
 
         UpdateCharacter(selectedOption);
     }
@@ -80,6 +86,7 @@ public class CharacterManager : MonoBehaviour
         {
             selectedOption = characterDB.CharacterCount - 1;
         }
+        menuHover.Play();
 
         UpdateCharacter(selectedOption);
     }
